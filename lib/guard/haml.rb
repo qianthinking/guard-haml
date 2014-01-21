@@ -16,7 +16,7 @@ module Guard
 
       super(opts)
 
-      if options[:input]
+      if options[:input] && options[:disable_auto_watch] != true
         watchers << ::Guard::Watcher.new(%r{^#{options[:input]}/(.+(\.html)?\.haml)$})
       end
     end
